@@ -127,40 +127,37 @@ const Footer: React.FC = () => {
           {/* Social Links */}
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
-            <div className="flex gap-4">
+            <div className="flex gap-6">
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/samuelajayittobiloba"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-purple-500/20 hover:bg-purple-500/40 rounded-lg flex items-center justify-center transition-all duration-200"
+                className="text-3xl hover:text-blue-500 hover:scale-125 active:scale-110 transition-all duration-200 transform cursor-pointer font-bold"
                 title="LinkedIn"
+                style={{color: '#0A66C2'}}
               >
-                💼
+                in
               </a>
               <a
-                href="https://github.com"
+                href="https://discord.com/users/belmontt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-purple-500/20 hover:bg-purple-500/40 rounded-lg flex items-center justify-center transition-all duration-200"
-                title="GitHub"
+                className="text-3xl hover:scale-125 active:scale-110 transition-all duration-200 transform cursor-pointer"
+                title="Discord"
+                style={{filter: 'drop-shadow(0 0 8px rgba(88, 101, 242, 0.5))'}}
               >
-                🔗
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" style={{color: '#5865F2'}}>
+                  <path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.444.864-.607 1.25a18.27 18.27 0 0 0-5.487 0c-.163-.386-.396-.875-.607-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.027c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.042-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.294.075.075 0 0 1 .078-.011c3.928 1.793 8.18 1.793 12.062 0a.075.075 0 0 1 .079.009c.12.098.246.198.373.295a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.076.076 0 0 0-.041.107c.359.698.77 1.364 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-4.783-.838-8.94-3.549-12.617a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.122 0-2.046-1.029-2.046-2.291 0-1.263.922-2.291 2.046-2.291 1.125 0 2.065 1.029 2.046 2.291 0 1.263-.92 2.291-2.046 2.291zm7.973 0c-1.122 0-2.046-1.029-2.046-2.291 0-1.263.922-2.291 2.046-2.291 1.125 0 2.065 1.029 2.046 2.291 0 1.263-.92 2.291-2.046 2.291z"/>
+                </svg>
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/0x_belmont"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-purple-500/20 hover:bg-purple-500/40 rounded-lg flex items-center justify-center transition-all duration-200"
-                title="Twitter"
+                className="text-3xl hover:text-gray-400 hover:scale-125 active:scale-110 transition-all duration-200 transform cursor-pointer"
+                title="X"
               >
                 𝕏
-              </a>
-              <a
-                href="mailto:hello@portfolio.com"
-                className="w-10 h-10 bg-purple-500/20 hover:bg-purple-500/40 rounded-lg flex items-center justify-center transition-all duration-200"
-                title="Email"
-              >
-                📧
               </a>
             </div>
           </div>
