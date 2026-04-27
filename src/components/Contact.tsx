@@ -154,38 +154,16 @@ const Contact: React.FC = () => {
         </form>
 
         {/* Contact Info */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          <div className="text-center">
-            <div className="text-3xl mb-3">📧</div>
-            <h3 className="font-semibold mb-2">Email</h3>
-            <p className="text-gray-400 text-sm">ajayisamuel0426@gmail.com</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl mb-3">💼</div>
-            <h3 className="font-semibold mb-2">LinkedIn</h3>
-            <a href="https://linkedin.com/in/samuelajayittobiloba" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-pink-600 transition-colors text-sm">
-              samuelajayittobiloba
-            </a>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl mb-3">💬</div>
-            <h3 className="font-semibold mb-2">Discord</h3>
-            <p className="text-gray-400 text-sm">@belmontt</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl mb-3">𝕏</div>
-            <h3 className="font-semibold mb-2">X</h3>
-            <a href="https://x.com/0x_belmont" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-pink-600 transition-colors text-sm">
-              0x_belmont
-            </a>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl mb-3">📱</div>
-            <h3 className="font-semibold mb-2">WhatsApp</h3>
-            <a href="https://wa.me/2349054391113" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-pink-600 transition-colors text-sm">
-              +234 905 439 1113
-            </a>
-          </div>
+        <div className="mt-16 flex justify-center gap-8">
+          <a href="https://linkedin.com/in/samuelajayittobiloba" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-purple-400 transition-colors">
+            💼
+          </a>
+          <a href="https://discord.com/users/belmontt" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-purple-400 transition-colors">
+            💬
+          </a>
+          <a href="https://x.com/0x_belmont" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-purple-400 transition-colors">
+            𝕏
+          </a>
         </div>
       </div>
     </section>
