@@ -82,9 +82,11 @@ const Hero: React.FC = () => {
             
             {/* Hero Image Container with Bounce Animation */}
             <div className="relative w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-600 p-1 flex items-center justify-center hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 animate-float">
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-6xl">
-                🚀
-              </div>
+              <img 
+                src="/yo.jpg" 
+                alt="Profile" 
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
           </div>
         </div>
