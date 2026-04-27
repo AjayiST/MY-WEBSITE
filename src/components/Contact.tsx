@@ -154,14 +154,14 @@ const Contact: React.FC = () => {
         </form>
 
         {/* Contact Info */}
-        <div className="mt-16 flex justify-center gap-8">
-          <a href="https://linkedin.com/in/samuelajayittobiloba" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-purple-400 transition-colors">
+        <div className="mt-16 flex justify-center gap-12">
+          <a href="https://linkedin.com/in/samuelajayittobiloba" target="_blank" rel="noopener noreferrer" className="text-7xl hover:text-purple-400 hover:scale-125 active:scale-110 transition-all duration-200 transform cursor-pointer">
             💼
           </a>
-          <a href="https://discord.com/users/belmontt" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-purple-400 transition-colors">
+          <a href="https://discord.com/users/belmontt" target="_blank" rel="noopener noreferrer" className="text-7xl hover:text-purple-400 hover:scale-125 active:scale-110 transition-all duration-200 transform cursor-pointer">
             💬
           </a>
-          <a href="https://x.com/0x_belmont" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-purple-400 transition-colors">
+          <a href="https://x.com/0x_belmont" target="_blank" rel="noopener noreferrer" className="text-7xl hover:text-purple-400 hover:scale-125 active:scale-110 transition-all duration-200 transform cursor-pointer">
             𝕏
           </a>
         </div>
