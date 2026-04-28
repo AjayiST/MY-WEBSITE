@@ -11,8 +11,13 @@ const Skills: React.FC = () => {
       name: 'Python', 
       icon: (
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30 5C16.2 5 5 16.2 5 30s11.2 25 25 25 25-11.2 25-25S43.8 5 30 5zm-5 10c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5zm10 30h-20v-3h20v3zm0-8h-20v-10h20v10z" fill="#3776AB"/>
-          <path d="M30 5C16.2 5 5 16.2 5 30s11.2 25 25 25 25-11.2 25-25S43.8 5 30 5zm5 10c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5z" fill="#FFD43B"/>
+          <defs>
+            <linearGradient id="pythonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3776AB"/>
+              <stop offset="100%" stopColor="#FFD43B"/>
+            </linearGradient>
+          </defs>
+          <path d="M30 5C16.73 5 6 14.25 6 25.5c0 6.75 3.75 12.75 10.5 16.5v6h27v-6c6.75-3.75 10.5-9.75 10.5-16.5C54 14.25 43.27 5 30 5zm-7.5 12c1.875 0 3.375 1.5 3.375 3.375S23.625 23.75 21.75 23.75 18.375 22.25 18.375 20.375 19.875 17 21.75 17zm15 0c1.875 0 3.375 1.5 3.375 3.375S40.625 23.75 38.75 23.75 35.375 22.25 35.375 20.375 36.875 17 38.75 17z" fill="url(#pythonGradient)"/>
         </svg>
       )
     },
@@ -41,8 +46,10 @@ const Skills: React.FC = () => {
       name: 'Flask App Development', 
       icon: (
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30 5C16.2 5 5 16.2 5 30s11.2 25 25 25 25-11.2 25-25S43.8 5 30 5zm0 45c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20z" fill="#000"/>
-          <path d="M25 20h10v5H25zm5 15c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" fill="#000"/>
+          <path d="M20 8H40V12H20Z" fill="#000"/>
+          <path d="M22 12H38V35C38 40 35 45 30 45C25 45 22 40 22 35Z" fill="none" stroke="#000" strokeWidth="2"/>
+          <path d="M26 35C26 38.5 27.5 42 30 42C32.5 42 34 38.5 34 35" fill="none" stroke="#FF6B35" strokeWidth="2.5" strokeLinecap="round"/>
+          <circle cx="30" cy="28" r="5" fill="none" stroke="#FF6B35" strokeWidth="1.5"/>
         </svg>
       )
     },
