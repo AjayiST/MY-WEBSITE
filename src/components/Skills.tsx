@@ -2,20 +2,51 @@ import React from 'react'
 
 interface Skill {
   name: string
-  percentage: number
-  icon: string
+  icon: React.ReactNode
 }
 
 const Skills: React.FC = () => {
   const skills: Skill[] = [
-    { name: 'React', percentage: 95, icon: '⚛️' },
-    { name: 'TypeScript', percentage: 90, icon: '📘' },
-    { name: 'Web3', percentage: 85, icon: '🔗' },
-    { name: 'Tailwind CSS', percentage: 95, icon: '🎨' },
-    { name: 'Node.js', percentage: 88, icon: '🟩' },
-    { name: 'Python', percentage: 85, icon: '🐍' },
-    { name: 'Mechanical Design', percentage: 80, icon: '⚙️' },
-    { name: 'Machine Learning', percentage: 82, icon: '🤖' },
+    { 
+      name: 'Python', 
+      icon: (
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 5C16.2 5 5 16.2 5 30s11.2 25 25 25 25-11.2 25-25S43.8 5 30 5zm-5 10c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5zm10 30h-20v-3h20v3zm0-8h-20v-10h20v10z" fill="#3776AB"/>
+          <path d="M30 5C16.2 5 5 16.2 5 30s11.2 25 25 25 25-11.2 25-25S43.8 5 30 5zm5 10c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5z" fill="#FFD43B"/>
+        </svg>
+      )
+    },
+    { name: 'Web Development', icon: '🌐' },
+    { 
+      name: 'Selenium', 
+      icon: (
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="25" fill="#04AA1D"/>
+          <text x="30" y="38" fontSize="28" fontWeight="bold" textAnchor="middle" fill="white">Se</text>
+        </svg>
+      )
+    },
+    { name: 'Bot Development', icon: '🤖' },
+    { 
+      name: 'SQLAlchemy', 
+      icon: (
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="40" height="40" rx="4" fill="#FFA500"/>
+          <text x="30" y="38" fontSize="18" fontWeight="bold" textAnchor="middle" fill="white">SQL</text>
+        </svg>
+      )
+    },
+    { name: '3D CAD Modeling', icon: '🎛️' },
+    { 
+      name: 'Flask App Development', 
+      icon: (
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 5C16.2 5 5 16.2 5 30s11.2 25 25 25 25-11.2 25-25S43.8 5 30 5zm0 45c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20z" fill="#000"/>
+          <path d="M25 20h10v5H25zm5 15c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" fill="#000"/>
+        </svg>
+      )
+    },
+    { name: 'Community Management', icon: '👥' },
   ]
 
   return (
@@ -33,54 +64,11 @@ const Skills: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-8">
           {skills.map((skill, index) => (
             <div key={index} className="px-4">
-              <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-lg p-8 h-full hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105">
-                <div className="text-6xl mb-4 text-center">{skill.icon}</div>
-                <h3 className="text-xl font-bold text-center mb-4">{skill.name}</h3>
-                
-                {/* Circular Progress */}
-                <div className="flex justify-center">
-                  <div className="relative w-32 h-32">
-                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 120 120">
-                      {/* Background Circle */}
-                      <circle
-                        cx="60"
-                        cy="60"
-                        r="54"
-                        fill="none"
-                        stroke="rgba(139, 92, 246, 0.2)"
-                        strokeWidth="4"
-                      />
-                      {/* Progress Circle */}
-                      <circle
-                        cx="60"
-                        cy="60"
-                        r="54"
-                        fill="none"
-                        stroke={`url(#gradient-${index})`}
-                        strokeWidth="4"
-                        strokeDasharray={`${2 * Math.PI * 54}`}
-                        strokeDashoffset={`${2 * Math.PI * 54 * (1 - skill.percentage / 100)}`}
-                        strokeLinecap="round"
-                        className="transition-all duration-1000"
-                      />
-                      <defs>
-                        <linearGradient
-                          id={`gradient-${index}`}
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#a855f7" />
-                          <stop offset="100%" stopColor="#ec4899" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-2xl font-bold">{skill.percentage}%</span>
-                    </div>
-                  </div>
+              <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-lg p-8 h-full hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center">
+                <div className="text-6xl mb-4 flex items-center justify-center">
+                  {typeof skill.icon === 'string' ? skill.icon : skill.icon}
                 </div>
+                <h3 className="text-xl font-bold text-center">{skill.name}</h3>
               </div>
             </div>
           ))}
