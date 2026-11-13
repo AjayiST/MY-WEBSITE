@@ -1,7 +1,7 @@
 {
   "name": "portfolio-website",
   "version": "1.0.0",
-  "description": "Advanced portfolio website showcasing technical skills, Web3 experience, and technical works",
+  "description": "Portfolio website for Belmont - Web3 Community Manager experienced in Telegram communities and vibecoding custom tools and bots",
   "type": "module",
   "scripts": {
     "dev": "vite",

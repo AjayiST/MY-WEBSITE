@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -22,13 +21,10 @@ function App() {
   }, [])
 
   return (
-    <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#0f172a', color: 'white' }}>
+    <div className="w-full min-h-screen bg-transparent text-stone-900 antialiased selection:bg-stone-900 selection:text-[#faf8f4]">
       <Navbar scrollPosition={scrollPosition} />
       <section id="home">
         <Hero />
-      </section>
-      <section id="skills">
-        <Skills />
       </section>
       <section id="projects">
         <Projects />

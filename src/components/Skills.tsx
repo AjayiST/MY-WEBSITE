@@ -2,81 +2,92 @@ import React from 'react'
 
 interface Skill {
   name: string
+  description: string
   icon: React.ReactNode
 }
 
 const Skills: React.FC = () => {
   const skills: Skill[] = [
     { 
-      name: 'Python', 
+      name: 'Telegram Community Management', 
+      description: 'Active daily moderation, discussion pacing, welcoming newcomers, and cultivating a positive vibe',
       icon: (
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="pythonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3776AB"/>
-              <stop offset="100%" stopColor="#FFD43B"/>
-            </linearGradient>
-          </defs>
-          <path d="M30 5C16.73 5 6 14.25 6 25.5c0 6.75 3.75 12.75 10.5 16.5v6h27v-6c6.75-3.75 10.5-9.75 10.5-16.5C54 14.25 43.27 5 30 5zm-7.5 12c1.875 0 3.375 1.5 3.375 3.375S23.625 23.75 21.75 23.75 18.375 22.25 18.375 20.375 19.875 17 21.75 17zm15 0c1.875 0 3.375 1.5 3.375 3.375S40.625 23.75 38.75 23.75 35.375 22.25 35.375 20.375 36.875 17 38.75 17z" fill="url(#pythonGradient)"/>
+        <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="26" fill="#0f172a"/>
+          <path d="M43 19L38 41C37.6 42.6 36.6 43 35.2 42.2L28 36.8L24.5 40.2C24.1 40.6 23.8 41 23 41L23.5 33.8L37.5 21.2C38.1 20.7 37.4 20.4 36.6 20.9L19.3 31.8L12.3 29.6C10.8 29.1 10.8 28.1 12.6 27.4L40 16.8C41.3 16.3 42.4 17.1 43 19Z" fill="white"/>
         </svg>
       )
     },
-    { name: 'Web Development', icon: '🌐' },
     { 
-      name: 'Selenium', 
+      name: 'Community Safety & Anti-Scam', 
+      description: 'Configuring Rose, Guardian, interactive captchas, and anti-phishing protocols to shield members',
       icon: (
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="30" cy="30" r="25" fill="#04AA1D"/>
-          <text x="30" y="38" fontSize="28" fontWeight="bold" textAnchor="middle" fill="white">Se</text>
+        <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 10L14 17V31C14 42 20.8 52 30 54.5C39.2 52 46 42 46 31V17L30 10Z" fill="#0f172a" fillOpacity="0.08" stroke="#0f172a" strokeWidth="3"/>
+          <path d="M25 30L28.5 33.5L35.5 26.5" stroke="#0f172a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       )
     },
-    { name: 'Bot Development', icon: '🤖' },
     { 
-      name: 'SQLAlchemy', 
-      icon: (
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="40" height="40" rx="4" fill="#FFA500"/>
-          <text x="30" y="38" fontSize="18" fontWeight="bold" textAnchor="middle" fill="white">SQL</text>
-        </svg>
-      )
+      name: 'Custom Bots & Automation', 
+      description: 'Vibecoding Telegram bots, community utilities, alert systems, and automated workflows',
+      icon: <span className="text-3xl">🤖</span>
     },
-    { name: '3D CAD Modeling', icon: '🎛️' },
     { 
-      name: 'Flask App Development', 
+      name: 'Community Growth & Engagement', 
+      description: 'Driving organic discussions, social pushes, and interactive campaigns that retain active members',
+      icon: <span className="text-3xl">📈</span>
+    },
+    { 
+      name: 'Vibecoding & AI Prototyping', 
+      description: 'Pragmatic, rapid execution turning ideas into working bots and tools using modern AI workflows',
+      icon: <span className="text-3xl">⚡</span>
+    },
+    { 
+      name: 'AMAs & Community Campaigns', 
+      description: 'Organizing voice chats, project AMAs, trivia sessions, and transparent reward distributions',
+      icon: <span className="text-3xl">🎙️</span>
+    },
+    { 
+      name: 'Python & Automation Scripting', 
+      description: 'Building custom scripts for floor scrapers, data monitors, and activity loggers',
       icon: (
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 8H40V12H20Z" fill="#000"/>
-          <path d="M22 12H38V35C38 40 35 45 30 45C25 45 22 40 22 35Z" fill="none" stroke="#000" strokeWidth="2"/>
-          <path d="M26 35C26 38.5 27.5 42 30 42C32.5 42 34 38.5 34 35" fill="none" stroke="#FF6B35" strokeWidth="2.5" strokeLinecap="round"/>
-          <circle cx="30" cy="28" r="5" fill="none" stroke="#FF6B35" strokeWidth="1.5"/>
-        </svg>
+        <img src="/pytho.webp" alt="Python" className="w-10 h-10 object-contain" />
       )
     },
-    { name: 'Community Management', icon: '👥' },
+    { 
+      name: 'Multi-Chain Operations', 
+      description: 'Experienced in managing and moderating communities across Solana, Base L2, and EVM ecosystems',
+      icon: <span className="text-3xl">⛓️</span>
+    },
   ]
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-900/50 to-purple-900/50">
+    <section className="py-24 px-4 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl md:text-6xl font-bold mb-4 text-center">
-          <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-            Skills & Expertise
-          </span>
-        </h2>
-        <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
-          Technical skills honed through years of experience and continuous learning
-        </p>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-block px-3 py-1 bg-slate-100 text-slate-800 text-xs font-semibold rounded-full mb-3 border border-slate-200">
+            Skills & Core Capabilities
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+            Skills & Superpowers
+          </h2>
+          <p className="text-slate-600 text-base md:text-lg">
+            Proven community leadership and safety combined with custom bot development and automation
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skills.map((skill, index) => (
-            <div key={index} className="px-4">
-              <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-lg p-8 h-full hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center">
-                <div className="text-6xl mb-4 flex items-center justify-center">
-                  {typeof skill.icon === 'string' ? skill.icon : skill.icon}
-                </div>
-                <h3 className="text-xl font-bold text-center">{skill.name}</h3>
+            <div
+              key={index}
+              className="bg-slate-50/70 hover:bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 flex flex-col items-start group"
+            >
+              <div className="w-14 h-14 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-200">
+                {skill.icon}
               </div>
+              <h3 className="text-base font-bold text-slate-900 mb-2">{skill.name}</h3>
+              <p className="text-slate-600 text-xs leading-relaxed">{skill.description}</p>
             </div>
           ))}
         </div>

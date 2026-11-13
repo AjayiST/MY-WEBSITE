@@ -1,92 +1,110 @@
 import React, { useState, useEffect } from 'react'
 
+const TITLES = [
+  'Community Manager',
+  'Community Moderator',
+  'Bot & Tool Builder',
+]
+
 const Hero: React.FC = () => {
-  const titles = ['Project Developer', 'Mechanical Designer', 'AI Tech Enthusiast']
   const [displayedText, setDisplayedText] = useState('')
   const [titleIndex, setTitleIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
-    const currentTitle = titles[titleIndex]
-    const typingSpeed = isDeleting ? 50 : 100
-    const deleteDelay = 2000
+    const currentTitle = TITLES[titleIndex % TITLES.length]
+    const typingSpeed = isDeleting ? 45 : 85
+    const deleteDelay = 2200
 
     let timer: ReturnType<typeof setTimeout>
 
     if (!isDeleting && charIndex < currentTitle.length) {
-      // Typing
       timer = setTimeout(() => {
         setDisplayedText(currentTitle.slice(0, charIndex + 1))
         setCharIndex(charIndex + 1)
       }, typingSpeed)
     } else if (isDeleting && charIndex > 0) {
-      // Deleting
       timer = setTimeout(() => {
         setDisplayedText(currentTitle.slice(0, charIndex - 1))
         setCharIndex(charIndex - 1)
       }, typingSpeed)
-    } else if (!isDeleting && charIndex === currentTitle.length) {
-      // Finished typing, wait before deleting
+    } else if (!isDeleting && charIndex >= currentTitle.length) {
       timer = setTimeout(() => {
         setIsDeleting(true)
       }, deleteDelay)
     } else if (isDeleting && charIndex === 0) {
-      // Finished deleting, move to next title
-      setTitleIndex((prev) => (prev + 1) % titles.length)
+      setTitleIndex((prev) => (prev + 1) % TITLES.length)
       setIsDeleting(false)
     }
 
     return () => clearTimeout(timer)
-  }, [charIndex, isDeleting, titleIndex, titles])
+  }, [charIndex, isDeleting, titleIndex])
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 px-4">
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <section className="min-h-screen flex items-center justify-center pt-24 pb-16 px-4 bg-gradient-to-b from-[#faf8f4] via-[#f5f1e8]/90 to-[#eee8dc]/80 bg-glass-grid relative overflow-hidden">
+      {/* Ambient Wool Glass Glow Orbs */}
+      <div className="absolute top-1/4 left-10 w-[450px] h-[450px] bg-[#faf7f2] rounded-full blur-3xl opacity-90 pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-[#e6ded0]/60 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-7xl w-full grid grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-center relative z-10">
         {/* Left Content */}
-        <div className="animate__animated animate__fadeInLeft">
-          <h2 className="text-5xl md:text-7xl font-bold mb-4">
-            Hi, I'm <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Belmont</span>
+        <div className="col-span-7 min-w-0 animate__animated animate__fadeInLeft">
+          {/* Status Badge with Live Pulse */}
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl sm:rounded-full glass-pill text-stone-800 text-[10px] sm:text-xs font-semibold mb-4 sm:mb-6 shadow-xs max-w-full leading-snug">
+            <span className="relative flex h-2 w-2 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>Available for Community Management & Web3 Automation Projects</span>
+          </div>
+
+          <h2 className="text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-stone-900 mb-3 sm:mb-4 leading-tight">
+            Hi, I'm <span className="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-700 bg-clip-text text-transparent underline decoration-[#d8d0c2] underline-offset-4 sm:underline-offset-8">Belmont</span>
           </h2>
-          <div className="h-20 mb-6">
-            <p className="text-2xl md:text-4xl text-purple-400 font-semibold">
+
+          <div className="min-h-[2.25rem] sm:h-14 md:h-16 mb-3 sm:mb-6 flex items-center">
+            <p className="text-sm min-[480px]:text-lg sm:text-2xl md:text-3xl text-stone-700 font-semibold tracking-tight">
               {displayedText}
-              <span className="animate-pulse">|</span>
+              <span className="inline-block w-0.5 h-4 min-[480px]:h-5 sm:h-7 ml-1 bg-stone-900 animate-pulse align-middle"></span>
             </p>
           </div>
-          <p className="text-gray-300 text-lg mb-8 max-w-xl">
-            I create innovative solutions blending cutting-edge technology with creative design. 
-            From Web3 projects to mechanical innovations, I turn ideas into reality.
+
+          <p className="text-stone-600 text-xs min-[480px]:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-5 sm:mb-8 max-w-xl font-normal">
+            I help Web3 projects manage active, safe and hyped communities. I combine hands-on moderation and community growth with vibecoding custom bots, web utilities, and automations that make chats run smoothly.
           </p>
-          <div className="flex gap-4 flex-wrap">
+
+          <div className="flex gap-2.5 sm:gap-4 flex-wrap">
             <a
               href="#projects"
-              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-200 font-semibold"
+              className="px-4 py-2.5 sm:px-7 sm:py-3.5 bg-stone-900 hover:bg-black text-[#faf8f4] text-xs sm:text-sm md:text-base font-semibold rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 cursor-pointer"
             >
-              View My Work
+              View Work Experience
             </a>
             <a
               href="#contact"
-              className="px-8 py-3 border-2 border-purple-400 rounded-lg hover:bg-purple-400 hover:bg-opacity-10 transition-all duration-200 font-semibold"
+              className="px-4 py-2.5 sm:px-7 sm:py-3.5 glass-surface glass-surface-hover text-stone-800 text-xs sm:text-sm md:text-base rounded-xl font-semibold transition-all duration-200 cursor-pointer"
             >
               Get In Touch
             </a>
           </div>
         </div>
 
-        {/* Right Content - Hero Image with Animation */}
-        <div className="flex justify-center">
-          <div className="relative w-80 h-80 animate__animated animate__fadeInRight">
-            {/* Animated Background Circle */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-            
-            {/* Hero Image Container with Bounce Animation */}
-            <div className="relative w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-600 p-1 flex items-center justify-center hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 animate-float">
-              <img 
-                src="/yo.jpg" 
-                alt="Profile" 
-                className="w-full h-full rounded-full object-cover"
-              />
+        {/* Right Content - Hero Image Always Beside Bio */}
+        <div className="col-span-5 min-w-0 flex justify-center">
+          <div className="relative w-full max-w-[180px] min-[480px]:max-w-[230px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[350px] animate__animated animate__fadeInRight">
+            {/* Ambient Aura Frame */}
+            <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-[#faf8f4] via-[#f0e9dc] to-[#e4dbc9] rounded-3xl blur-xl sm:blur-2xl opacity-80"></div>
+
+            {/* Profile Card Container with Wool Glass Surface */}
+            <div className="relative w-full aspect-square rounded-2xl sm:rounded-3xl glass-surface p-1.5 sm:p-3 animate-float shadow-[0_15px_35px_rgba(60,48,35,0.06)]">
+              <div className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#f0eae0] border border-white/90">
+                <img
+                  src="/yo.jpg"
+                  alt="Belmont Profile"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

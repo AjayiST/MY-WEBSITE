@@ -3,11 +3,11 @@
 @import 'tailwindcss/utilities';
 @import 'animate.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
 
 :root {
-  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --radius-lg: 1rem;
 }
 
@@ -19,13 +19,13 @@
 
 html {
   scroll-behavior: smooth;
-  background: #0f172a;
+  background-color: #f6f3ed;
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: #0f172a;
-  color: #ffffff;
+  background: radial-gradient(ellipse at 50% -10%, #faf8f4 0%, #f4f0e8 45%, #ebe5da 100%);
+  color: #1c1917;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,7 +36,7 @@ body {
 #root {
   width: 100%;
   min-height: 100vh;
-  background: #0f172a;
+  background: transparent;
   display: block;
   position: relative;
 }
@@ -44,30 +44,83 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
+  color: #1c1917;
+}
+
+/* Wool Glass Sleekness Utilities */
+.glass-surface {
+  background: rgba(253, 251, 247, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(60, 48, 35, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-surface-hover:hover {
+  background: rgba(255, 253, 250, 0.92);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 18px 45px -10px rgba(60, 48, 35, 0.08), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+
+.glass-pill {
+  background: rgba(250, 247, 241, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(230, 223, 212, 0.85);
+  box-shadow: 0 4px 16px -2px rgba(60, 48, 35, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Organic Warm Wool / Linen Grid */
+.bg-glass-grid {
+  background-size: 44px 44px;
+  background-image: 
+    linear-gradient(to right, rgba(168, 155, 138, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 155, 138, 0.09) 1px, transparent 1px);
+}
+
+.bg-glass-grid-dark {
+  background-size: 44px 44px;
+  background-image:
+    linear-gradient(to right, rgba(250, 248, 244, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(250, 248, 244, 0.045) 1px, transparent 1px);
+}
+
+.glass-surface-dark {
+  background: rgba(250, 248, 244, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(250, 248, 244, 0.12);
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+footer h2,
+footer h3,
+footer h4 {
+  color: #faf8f4;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(246, 243, 237, 0.8);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #a855f7, #ec4899);
-  border-radius: 5px;
+  background: #d8d0c2;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #9333ea, #db2777);
+  background: #b8ac9a;
 }
 
 /* Text Selection */
 ::selection {
-  background: rgba(168, 85, 247, 0.5);
-  color: #ffffff;
+  background: #1c1917;
+  color: #faf8f4;
 }
 
 /* Animations */
@@ -76,52 +129,12 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-12px);
   }
 }
 
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
-  }
-}
-
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Responsive Typography */
-@media (max-width: 640px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
 
 /* Section Spacing */
@@ -132,24 +145,15 @@ section {
 /* Button Base Styles */
 button {
   outline: none;
-  border: none;
   cursor: pointer;
 }
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(to right, #a855f7, #ec4899);
+  background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Glass Morphism */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Focus States */
@@ -163,12 +167,10 @@ a {
   transition: all var(--transition-base);
 }
 
-/* Disable transitions for animations */
 .animate__animated {
   animation-duration: 0.8s;
 }
 
-/* Responsive Typography */
 h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
 }
@@ -179,4 +181,61 @@ h2 {
 
 h3 {
   font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Fluid Responsive Square Milestone Cards */
+.milestone-card {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  container-type: inline-size;
+  padding: clamp(0.65rem, 4.5cqi, 1.5rem);
+}
+
+.milestone-card-img {
+  height: clamp(3.75rem, 27cqi, 9.75rem);
+}
+
+.milestone-card-body {
+  padding-top: clamp(0.35rem, 2.2cqi, 0.75rem);
+  padding-bottom: clamp(0.35rem, 2.2cqi, 0.75rem);
+}
+
+.milestone-card-badge {
+  font-size: clamp(0.58rem, 2.4cqi, 0.75rem);
+  padding: clamp(0.1rem, 0.6cqi, 0.2rem) clamp(0.4rem, 2cqi, 0.65rem);
+}
+
+.milestone-card-title {
+  font-size: clamp(0.85rem, 4.5cqi, 1.375rem);
+  line-height: 1.2;
+}
+
+.milestone-card-role {
+  font-size: clamp(0.55rem, 2.3cqi, 0.75rem);
+  margin-bottom: clamp(0.2rem, 1.2cqi, 0.5rem);
+}
+
+.milestone-card-desc {
+  font-size: clamp(0.65rem, 2.9cqi, 0.875rem);
+  line-height: 1.45;
+}
+
+.milestone-card-highlights {
+  padding: clamp(0.35rem, 2.2cqi, 0.65rem);
+}
+
+.milestone-card-highlight-item {
+  font-size: clamp(0.6rem, 2.55cqi, 0.78rem);
+  line-height: 1.35;
+}
+
+.milestone-card-tags {
+  padding-top: clamp(0.35rem, 2cqi, 0.625rem);
+  gap: clamp(0.2rem, 1.1cqi, 0.4rem);
+}
+
+.milestone-card-tag {
+  font-size: clamp(0.54rem, 2.2cqi, 0.75rem);
+  padding: clamp(0.1rem, 0.5cqi, 0.2rem) clamp(0.32rem, 1.6cqi, 0.55rem);
 }

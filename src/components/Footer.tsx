@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -11,12 +10,10 @@ const Footer: React.FC = () => {
     setSubscribeLoading(true)
 
     try {
-      // You would integrate with Mailchimp API here
-      // For now, we'll just show a success message
       setSubscribeMessage('Thanks for subscribing!')
       setEmail('')
       setTimeout(() => setSubscribeMessage(''), 5000)
-    } catch (error) {
+    } catch {
       setSubscribeMessage('Failed to subscribe. Please try again.')
     } finally {
       setSubscribeLoading(false)
@@ -24,101 +21,70 @@ const Footer: React.FC = () => {
   }
 
   return (
-    <footer className="bg-gradient-to-br from-slate-950 to-purple-950 border-t border-purple-500/20 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-[#181512] bg-gradient-to-b from-[#211d19] via-[#181512] to-[#110f0d] text-stone-300 py-16 px-4 border-t border-stone-800/80 relative overflow-hidden">
+      {/* Subtle Dark Grid & Warm Ambient Glow */}
+      <div className="absolute inset-0 bg-glass-grid-dark pointer-events-none"></div>
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[360px] bg-[#faf8f4]/[0.04] rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Newsletter Section */}
-        <div className="mb-16 max-w-2xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-4">
-            Stay Updated
+        <div className="mb-16 max-w-xl mx-auto text-center glass-surface-dark rounded-2xl p-8 sm:p-10">
+          <h3 className="text-2xl md:text-3xl font-extrabold text-[#faf8f4] mb-3 tracking-tight">
+            Stay in the Loop
           </h3>
-          <p className="text-center text-gray-400 mb-6">
-            Subscribe to my newsletter for the latest projects and insights
+          <p className="text-stone-300 text-sm mb-6 leading-relaxed">
+            Get updates on community management strategies, custom Web3 bots, and personal experiments.
           </p>
-          <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+          <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2.5 max-w-md mx-auto">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="flex-1 px-4 py-3 bg-gray-800/50 border border-purple-500/30 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-200 text-white placeholder-gray-500"
+              className="flex-1 px-4 py-3 bg-white/[0.07] border border-white/15 rounded-xl focus:outline-none focus:border-[#faf8f4]/70 focus:bg-white/[0.11] transition-all duration-200 text-[#faf8f4] placeholder-stone-400 text-sm shadow-xs"
             />
             <button
               type="submit"
               disabled={subscribeLoading}
-              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-200 font-semibold disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
+              className="px-6 py-3 bg-[#faf8f4] hover:bg-white text-stone-900 font-bold rounded-xl transition-all duration-200 text-sm shadow-[0_4px_16px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(250,248,244,0.18)] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap cursor-pointer"
             >
               {subscribeLoading ? 'Subscribing...' : 'Subscribe'}
             </button>
           </form>
           {subscribeMessage && (
-            <p className="text-center text-green-400 mt-3">{subscribeMessage}</p>
+            <p className="text-center text-emerald-400 text-sm mt-3 font-medium">{subscribeMessage}</p>
           )}
         </div>
 
-        <hr className="border-purple-500/20 mb-12" />
+        <hr className="border-white/10 mb-12" />
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Logo and Description */}
-          <div>
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-3">
-              Portfolio
-            </h2>
-            <p className="text-gray-400 text-sm">
-              Crafting innovative solutions at the intersection of technology and creativity.
-            </p>
-          </div>
-
+        <div className="max-w-xl mx-auto flex justify-between gap-8 mb-12">
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="font-semibold text-[#faf8f4] mb-4 text-xs uppercase tracking-wider">
+              Navigation
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-stone-400">
               <li>
-                <a href="#home" className="hover:text-purple-400 transition-colors">
+                <a href="#home" className="hover:text-[#faf8f4] transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-purple-400 transition-colors">
-                  Skills
+                <a href="#projects" className="hover:text-[#faf8f4] transition-colors">
+                  Experience Roadmap
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-purple-400 transition-colors">
-                  Projects
+                <a href="#projects" className="hover:text-[#faf8f4] transition-colors">
+                  Tools Built
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-purple-400 transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Projects */}
-          <div>
-            <h4 className="font-semibold mb-4">Categories</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Web3
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Full-Stack
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  Mechanical
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-purple-400 transition-colors">
-                  AI/ML
+                <a href="#contact" className="hover:text-[#faf8f4] transition-colors">
+                  Get in Touch
                 </a>
               </li>
             </ul>
@@ -126,26 +92,48 @@ const Footer: React.FC = () => {
 
           {/* Social Links */}
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="font-semibold text-[#faf8f4] mb-4 text-xs uppercase tracking-wider">
+              Direct Connect
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-stone-400">
               <li>
-                <a href="https://linkedin.com/in/samuelajayittobiloba" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
-                  LinkedIn
+                <a href="https://t.me/belmonttg" target="_blank" rel="noopener noreferrer" className="hover:text-[#faf8f4] transition-colors flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="flex-shrink-0">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                  </svg>
+                  Telegram
                 </a>
               </li>
               <li>
-                <a href="https://discord.com/users/belmontt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
-                  Discord
+                <a href="https://github.com/AjayiST" target="_blank" rel="noopener noreferrer" className="hover:text-[#faf8f4] transition-colors flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="flex-shrink-0">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  GitHub
                 </a>
               </li>
               <li>
-                <a href="https://x.com/0x_belmont" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+                <a href="https://x.com/still_belmont" target="_blank" rel="noopener noreferrer" className="hover:text-[#faf8f4] transition-colors flex items-center gap-2">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="flex-shrink-0">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
                   X
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/2349054391113" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
-                  WhatsApp
+                <a href="https://discord.com/users/belmontt" target="_blank" rel="noopener noreferrer" className="hover:text-[#faf8f4] transition-colors flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="flex-shrink-0">
+                    <path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.444.864-.607 1.25a18.27 18.27 0 0 0-5.487 0c-.163-.386-.396-.875-.607-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.027c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.042-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.294.075.075 0 0 1 .078-.011c3.928 1.793 8.18 1.793 12.062 0a.075.075 0 0 1 .079.009c.12.098.246.198.373.295a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.076.076 0 0 0-.041.107c.359.698.77 1.364 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-4.783-.838-8.94-3.549-12.617a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.122 0-2.046-1.029-2.046-2.291 0-1.263.922-2.291 2.046-2.291 1.125 0 2.065 1.029 2.046 2.291 0 1.263-.92 2.291-2.046 2.291zm7.973 0c-1.122 0-2.046-1.029-2.046-2.291 0-1.263.922-2.291 2.046-2.291 1.125 0 2.065 1.029 2.046 2.291 0 1.263-.92 2.291-2.046 2.291z"/>
+                  </svg>
+                  Discord
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/samuelajayittobiloba" target="_blank" rel="noopener noreferrer" className="hover:text-[#faf8f4] transition-colors flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="flex-shrink-0">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
                 </a>
               </li>
             </ul>
@@ -153,15 +141,12 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom */}
-        <hr className="border-purple-500/20 mb-8" />
-        <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-          <p>© 2024 Belmont. All rights reserved.</p>
+        <hr className="border-white/10 mb-8" />
+        <div className="flex flex-col md:flex-row justify-between items-center text-stone-400 text-xs">
+          <p>© {new Date().getFullYear()} Belmont. Web3 Community Manager & Vibecoder.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-purple-400 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-purple-400 transition-colors">
-              Terms of Service
+            <a href="#home" className="hover:text-[#faf8f4] transition-colors font-medium">
+              Back to top ↑
             </a>
           </div>
         </div>
