@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollPosition }) => {
 
   const navItems = [
     { label: 'Home', id: 'home' },
-    { label: 'Roadmap & Tools', id: 'projects' },
+    { label: 'Experience & Portfolio', id: 'projects' },
     { label: 'Contact', id: 'contact' },
   ]
 

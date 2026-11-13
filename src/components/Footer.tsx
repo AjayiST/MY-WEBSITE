@@ -74,12 +74,12 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#projects" className="hover:text-[#faf8f4] transition-colors">
-                  Experience Roadmap
+                  Experience & Portfolio
                 </a>
               </li>
               <li>
                 <a href="#projects" className="hover:text-[#faf8f4] transition-colors">
-                  Tools Built
+                  Technical Tools
                 </a>
               </li>
               <li>
