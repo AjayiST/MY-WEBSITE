@@ -99,28 +99,28 @@ const Contact: React.FC = () => {
   ]
 
   return (
-    <section id="contact" className="py-24 px-4 bg-gradient-to-b from-[#09090b] via-[#0d1512] to-[#09090b] bg-glass-grid relative overflow-hidden border-t border-white/10">
-      {/* Ambient Emerald Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+    <section id="contact" className="py-24 px-4 bg-gradient-to-b from-[#070b14] via-[#091326] to-[#070b14] bg-glass-grid relative overflow-hidden border-t border-sky-500/15">
+      {/* Ambient Blue Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-sky-500/10 via-blue-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-2xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-1.5 glass-pill text-emerald-400 border border-emerald-500/30 text-xs font-semibold rounded-full mb-3 shadow-2xs">
+          <div className="inline-block px-4 py-1.5 glass-pill text-sky-400 border border-sky-500/30 text-xs font-semibold rounded-full mb-3 shadow-2xs">
             Start a Conversation
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-zinc-400 text-base md:text-lg">
+          <p className="text-slate-300 text-base md:text-lg">
             Looking for a dedicated Community Manager or custom vibecoded tools and bots? Let's talk!
           </p>
         </div>
 
-        <div className="glass-surface border border-white/10 rounded-2xl p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+        <div className="glass-surface border border-white/10 rounded-2xl p-8 sm:p-10 shadow-[0_12px_40px_rgba(2,6,23,0.7)] backdrop-blur-xl">
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+              <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
                 Your Name
               </label>
               <input
@@ -130,14 +130,14 @@ const Contact: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-emerald-500 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 transition-all text-white placeholder-zinc-500 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-sky-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-sky-500/25 transition-all text-white placeholder-slate-500 text-sm shadow-xs"
                 placeholder="e.g. Alex"
               />
             </div>
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
                 Email Address
               </label>
               <input
@@ -147,14 +147,14 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-emerald-500 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 transition-all text-white placeholder-zinc-500 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-sky-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-sky-500/25 transition-all text-white placeholder-slate-500 text-sm shadow-xs"
                 placeholder="alex@project.xyz"
               />
             </div>
 
             {/* Subject Field */}
             <div>
-              <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+              <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
                 Subject
               </label>
               <input
@@ -164,14 +164,14 @@ const Contact: React.FC = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-emerald-500 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 transition-all text-white placeholder-zinc-500 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-sky-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-sky-500/25 transition-all text-white placeholder-slate-500 text-sm shadow-xs"
                 placeholder="Community Manager Role / Custom Bot Build"
               />
             </div>
 
             {/* Message Field */}
             <div>
-              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
                 Message
               </label>
               <textarea
@@ -181,14 +181,14 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-emerald-500 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 transition-all text-white placeholder-zinc-500 text-sm resize-none shadow-xs"
+                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-sky-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-sky-500/25 transition-all text-white placeholder-slate-500 text-sm resize-none shadow-xs"
                 placeholder="Tell me about your project, community goals, or bot requirements..."
               />
             </div>
 
             {/* Success Message */}
             {success && (
-              <div className="p-4 bg-emerald-950/80 border border-emerald-500/40 rounded-xl text-emerald-300 text-sm font-medium shadow-xs">
+              <div className="p-4 bg-sky-950/80 border border-sky-500/40 rounded-xl text-sky-300 text-sm font-medium shadow-xs">
                 ✓ Message sent successfully! I'll reply promptly.
               </div>
             )}
@@ -204,7 +204,7 @@ const Contact: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.35)] hover:shadow-[0_0_30px_rgba(16,185,129,0.55)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed text-sm tracking-wide"
+              className="w-full py-3.5 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold rounded-xl shadow-[0_0_20px_rgba(14,165,233,0.4)] hover:shadow-[0_0_30px_rgba(56,189,248,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed text-sm tracking-wide"
             >
               {loading ? 'Sending Message...' : 'Send Message'}
             </button>
@@ -219,13 +219,13 @@ const Contact: React.FC = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative h-12 min-w-[48px] px-3.5 rounded-xl glass-surface hover:bg-white/[0.08] text-zinc-300 hover:text-white border border-white/10 hover:border-emerald-500/40 flex items-center justify-center hover:-translate-y-0.5 shadow-xs hover:shadow-md transition-all duration-300 ease-out cursor-pointer overflow-hidden whitespace-nowrap"
+              className="group relative h-12 min-w-[48px] px-3.5 rounded-xl glass-surface hover:bg-sky-500/10 text-slate-300 hover:text-white border border-white/10 hover:border-sky-500/40 flex items-center justify-center hover:-translate-y-0.5 shadow-xs hover:shadow-md transition-all duration-300 ease-out cursor-pointer overflow-hidden whitespace-nowrap"
               title={`${social.name}: ${social.handle}`}
             >
               <span className={`flex-shrink-0 flex items-center justify-center transition-colors ${social.hoverColor}`}>
                 {social.icon}
               </span>
-              <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-[240px] group-hover:opacity-100 group-hover:ml-2.5 transition-all duration-300 ease-out font-bold text-xs sm:text-sm text-zinc-100">
+              <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-[240px] group-hover:opacity-100 group-hover:ml-2.5 transition-all duration-300 ease-out font-bold text-xs sm:text-sm text-slate-100">
                 {social.handle}
               </span>
             </a>

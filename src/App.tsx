@@ -5,7 +5,7 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-function App() {
+const App: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
@@ -14,24 +14,19 @@ function App() {
     }
 
     window.addEventListener('scroll', handleScroll)
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <div className="w-full min-h-screen bg-transparent text-zinc-100 antialiased selection:bg-emerald-500 selection:text-black">
+    <div className="min-h-screen bg-transparent text-slate-100 selection:bg-sky-500 selection:text-white">
       <Navbar scrollPosition={scrollPosition} />
-      <section id="home">
-        <Hero />
-      </section>
-      <section id="projects">
+      <main>
+        <div id="home">
+          <Hero />
+        </div>
         <Projects />
-      </section>
-      <section id="contact">
         <Contact />
-      </section>
+      </main>
       <Footer />
     </div>
   )
