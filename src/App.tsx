@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   return (
-    <div className="w-full min-h-screen bg-transparent text-stone-900 antialiased selection:bg-stone-900 selection:text-[#faf8f4]">
+    <div className="w-full min-h-screen bg-transparent text-zinc-100 antialiased selection:bg-emerald-500 selection:text-black">
       <Navbar scrollPosition={scrollPosition} />
       <section id="home">
         <Hero />

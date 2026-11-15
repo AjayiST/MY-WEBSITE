@@ -19,13 +19,14 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #f6f3ed;
+  background-color: #09090b;
+  color-scheme: dark;
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: radial-gradient(ellipse at 50% -10%, #faf8f4 0%, #f4f0e8 45%, #ebe5da 100%);
-  color: #1c1917;
+  background: radial-gradient(ellipse at 50% -10%, #0d1a14 0%, #09090b 55%, #050507 100%);
+  color: #f4f4f5;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,59 +45,59 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #1c1917;
+  color: #ffffff;
 }
 
-/* Wool Glass Sleekness Utilities */
+/* Cyber Obsidian Frosted Glass Utilities */
 .glass-surface {
-  background: rgba(253, 251, 247, 0.78);
+  background: rgba(14, 14, 18, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 30px -10px rgba(60, 48, 35, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .glass-surface-hover:hover {
-  background: rgba(255, 253, 250, 0.92);
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 18px 45px -10px rgba(60, 48, 35, 0.08), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  background: rgba(20, 20, 26, 0.88);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 20px 50px -10px rgba(16, 185, 129, 0.15), inset 0 1px 2px 0 rgba(255, 255, 255, 0.12);
 }
 
 .glass-pill {
-  background: rgba(250, 247, 241, 0.82);
+  background: rgba(16, 185, 129, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(230, 223, 212, 0.85);
-  box-shadow: 0 4px 16px -2px rgba(60, 48, 35, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  box-shadow: 0 4px 16px -2px rgba(16, 185, 129, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-/* Organic Warm Wool / Linen Grid */
+/* Cyber Matrix Subtle Grid */
 .bg-glass-grid {
   background-size: 44px 44px;
   background-image: 
-    linear-gradient(to right, rgba(168, 155, 138, 0.09) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(168, 155, 138, 0.09) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
 }
 
 .bg-glass-grid-dark {
   background-size: 44px 44px;
   background-image:
-    linear-gradient(to right, rgba(250, 248, 244, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(250, 248, 244, 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
 }
 
 .glass-surface-dark {
-  background: rgba(250, 248, 244, 0.05);
+  background: rgba(10, 10, 14, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(250, 248, 244, 0.12);
-  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 footer h2,
 footer h3,
 footer h4 {
-  color: #faf8f4;
+  color: #ffffff;
 }
 
 /* Custom Scrollbar */
@@ -105,22 +106,22 @@ footer h4 {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(246, 243, 237, 0.8);
+  background: #09090b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d8d0c2;
+  background: #27272a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8ac9a;
+  background: #10b981;
 }
 
 /* Text Selection */
 ::selection {
-  background: #1c1917;
-  color: #faf8f4;
+  background: #10b981;
+  color: #000000;
 }
 
 /* Animations */

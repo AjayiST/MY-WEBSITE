@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
       setFormData({ name: '', email: '', subject: '', message: '' })
       setTimeout(() => setSuccess(false), 5000)
     } catch (err) {
-      setError('Failed to send message. Please try again or reach out on socials!')
+      setError('Failed to send message. Please reach out directly on socials!')
       console.error(err)
     } finally {
       setLoading(false)
@@ -69,14 +69,14 @@ const Contact: React.FC = () => {
           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
         </svg>
       ),
-      hoverColor: 'group-hover:text-stone-950',
+      hoverColor: 'group-hover:text-white',
     },
     {
       name: 'X',
       handle: '@still_belmont',
       url: 'https://x.com/still_belmont',
       icon: <span className="font-bold text-lg leading-none">𝕏</span>,
-      hoverColor: 'group-hover:text-stone-950',
+      hoverColor: 'group-hover:text-white',
     },
     {
       name: 'Discord',
@@ -99,25 +99,28 @@ const Contact: React.FC = () => {
   ]
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-[#f4f0e8] via-[#faf8f4] to-[#ede7dc] bg-glass-grid relative overflow-hidden border-t border-[#e8e1d5]">
-      {/* Ambient Wool Glass Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#faf8f4] via-[#f0e9dc]/70 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+    <section id="contact" className="py-24 px-4 bg-gradient-to-b from-[#09090b] via-[#0d1512] to-[#09090b] bg-glass-grid relative overflow-hidden border-t border-white/10">
+      {/* Ambient Emerald Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-2xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900 mb-4">
+          <div className="inline-block px-4 py-1.5 glass-pill text-emerald-400 border border-emerald-500/30 text-xs font-semibold rounded-full mb-3 shadow-2xs">
+            Start a Conversation
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-stone-600 text-base md:text-lg">
+          <p className="text-zinc-400 text-base md:text-lg">
             Looking for a dedicated Community Manager or custom vibecoded tools and bots? Let's talk!
           </p>
         </div>
 
-        <div className="glass-surface border border-white/95 rounded-2xl p-8 sm:p-10 shadow-[0_12px_40px_rgba(60,48,35,0.05)] backdrop-blur-xl">
+        <div className="glass-surface border border-white/10 rounded-2xl p-8 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl">
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
                 Your Name
               </label>
               <input
@@ -127,14 +130,14 @@ const Contact: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-[#faf8f4]/90 border border-[#e2dcd0] rounded-xl focus:border-stone-900 focus:bg-white focus:ring-2 focus:ring-stone-900/10 transition-all text-stone-900 placeholder-stone-400 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-emerald-500 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 transition-all text-white placeholder-zinc-500 text-sm shadow-xs"
                 placeholder="e.g. Alex"
               />
             </div>
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
                 Email Address
               </label>
               <input
@@ -144,14 +147,14 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-[#faf8f4]/90 border border-[#e2dcd0] rounded-xl focus:border-stone-900 focus:bg-white focus:ring-2 focus:ring-stone-900/10 transition-all text-stone-900 placeholder-stone-400 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-emerald-500 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 transition-all text-white placeholder-zinc-500 text-sm shadow-xs"
                 placeholder="alex@project.xyz"
               />
             </div>
 
             {/* Subject Field */}
             <div>
-              <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
                 Subject
               </label>
               <input
@@ -161,14 +164,14 @@ const Contact: React.FC = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-[#faf8f4]/90 border border-[#e2dcd0] rounded-xl focus:border-stone-900 focus:bg-white focus:ring-2 focus:ring-stone-900/10 transition-all text-stone-900 placeholder-stone-400 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-emerald-500 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 transition-all text-white placeholder-zinc-500 text-sm shadow-xs"
                 placeholder="Community Manager Role / Custom Bot Build"
               />
             </div>
 
             {/* Message Field */}
             <div>
-              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
                 Message
               </label>
               <textarea
@@ -178,21 +181,21 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-[#faf8f4]/90 border border-[#e2dcd0] rounded-xl focus:border-stone-900 focus:bg-white focus:ring-2 focus:ring-stone-900/10 transition-all text-stone-900 placeholder-stone-400 text-sm resize-none shadow-xs"
+                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-emerald-500 focus:bg-white/[0.08] focus:ring-2 focus:ring-emerald-500/20 transition-all text-white placeholder-zinc-500 text-sm resize-none shadow-xs"
                 placeholder="Tell me about your project, community goals, or bot requirements..."
               />
             </div>
 
             {/* Success Message */}
             {success && (
-              <div className="p-4 bg-emerald-50/90 border border-emerald-200/90 rounded-xl text-emerald-800 text-sm font-medium shadow-xs">
+              <div className="p-4 bg-emerald-950/80 border border-emerald-500/40 rounded-xl text-emerald-300 text-sm font-medium shadow-xs">
                 ✓ Message sent successfully! I'll reply promptly.
               </div>
             )}
 
             {/* Error Message */}
             {error && (
-              <div className="p-4 bg-rose-50/90 border border-rose-200/90 rounded-xl text-rose-800 text-sm font-medium shadow-xs">
+              <div className="p-4 bg-rose-950/80 border border-rose-500/40 rounded-xl text-rose-300 text-sm font-medium shadow-xs">
                 ✗ {error}
               </div>
             )}
@@ -201,7 +204,7 @@ const Contact: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-stone-900 hover:bg-black text-[#faf8f4] font-bold rounded-xl shadow-[0_4px_16px_rgba(60,48,35,0.18)] hover:shadow-[0_8px_24px_rgba(60,48,35,0.25)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed text-sm tracking-wide"
+              className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.35)] hover:shadow-[0_0_30px_rgba(16,185,129,0.55)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed text-sm tracking-wide"
             >
               {loading ? 'Sending Message...' : 'Send Message'}
             </button>
@@ -216,13 +219,13 @@ const Contact: React.FC = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative h-12 min-w-[48px] px-3.5 rounded-xl glass-surface hover:bg-[#faf8f4] text-stone-700 hover:text-stone-950 border border-white/95 flex items-center justify-center hover:-translate-y-0.5 shadow-xs hover:shadow-md transition-all duration-300 ease-out cursor-pointer overflow-hidden whitespace-nowrap"
+              className="group relative h-12 min-w-[48px] px-3.5 rounded-xl glass-surface hover:bg-white/[0.08] text-zinc-300 hover:text-white border border-white/10 hover:border-emerald-500/40 flex items-center justify-center hover:-translate-y-0.5 shadow-xs hover:shadow-md transition-all duration-300 ease-out cursor-pointer overflow-hidden whitespace-nowrap"
               title={`${social.name}: ${social.handle}`}
             >
               <span className={`flex-shrink-0 flex items-center justify-center transition-colors ${social.hoverColor}`}>
                 {social.icon}
               </span>
-              <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-[240px] group-hover:opacity-100 group-hover:ml-2.5 transition-all duration-300 ease-out font-bold text-xs sm:text-sm text-stone-800">
+              <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-[240px] group-hover:opacity-100 group-hover:ml-2.5 transition-all duration-300 ease-out font-bold text-xs sm:text-sm text-zinc-100">
                 {social.handle}
               </span>
             </a>
