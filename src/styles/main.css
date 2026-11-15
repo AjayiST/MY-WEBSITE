@@ -19,14 +19,14 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #edf4f9;
+  background-color: #caf0f8;
   color-scheme: light;
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: radial-gradient(ellipse at 50% 0%, #d8ecf8 0%, #edf4f9 55%, #e3eff7 100%);
-  color: #1e293b;
+  background: radial-gradient(ellipse at 50% 0%, #ade8f4 0%, #caf0f8 40%, #e6f7fa 70%, #f4fbfd 100%);
+  color: #03045e;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,61 +45,61 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #0f172a;
+  color: #03045e;
 }
 
-/* Powder Blue Crystalline Frosted Glass */
+/* Ocean Blue Serenity Frosted Glass */
 .glass-surface {
   background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.95);
   box-shadow: 
-    0 12px 36px -8px rgba(147, 197, 253, 0.22),
-    0 4px 16px -2px rgba(186, 215, 245, 0.28),
+    0 12px 36px -8px rgba(0, 119, 182, 0.12),
+    0 4px 16px -2px rgba(144, 224, 239, 0.25),
     inset 0 1px 2px 0 rgba(255, 255, 255, 1);
 }
 
 .glass-surface-hover:hover {
   background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(147, 197, 253, 0.65);
+  border-color: rgba(0, 180, 216, 0.55);
   box-shadow: 
-    0 20px 45px -10px rgba(147, 197, 253, 0.32),
-    0 8px 24px -4px rgba(186, 215, 245, 0.38),
+    0 20px 45px -10px rgba(0, 119, 182, 0.22),
+    0 8px 24px -4px rgba(72, 202, 228, 0.35),
     inset 0 1px 2px 0 rgba(255, 255, 255, 1);
 }
 
 .glass-pill {
-  background: rgba(224, 242, 254, 0.72);
+  background: rgba(202, 240, 248, 0.65);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(147, 197, 253, 0.65);
+  border: 1px solid rgba(72, 202, 228, 0.55);
   box-shadow: 
-    0 4px 14px -2px rgba(147, 197, 253, 0.2),
+    0 4px 14px -2px rgba(0, 180, 216, 0.18),
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
 }
 
-/* Powder Blue Grid */
+/* Ocean Blue Grid */
 .bg-glass-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(147, 197, 253, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(147, 197, 253, 0.12) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 180, 216, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 180, 216, 0.08) 1px, transparent 1px);
 }
 
 .bg-glass-grid-dark {
   background-size: 40px 40px;
   background-image:
-    linear-gradient(to right, rgba(147, 197, 253, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(147, 197, 253, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(72, 202, 228, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(72, 202, 228, 0.08) 1px, transparent 1px);
 }
 
 .glass-surface-dark {
-  background: rgba(14, 23, 38, 0.85);
+  background: rgba(3, 4, 94, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(147, 197, 253, 0.2);
-  box-shadow: 0 16px 40px -12px rgba(2, 6, 23, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(72, 202, 228, 0.3);
+  box-shadow: 0 16px 40px -12px rgba(2, 6, 23, 0.6), inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 footer h2,
@@ -114,22 +114,22 @@ footer h4 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #edf4f9;
+  background: #caf0f8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bfdbfe;
+  background: #90e0ef;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #60a5fa;
+  background: #00b4d8;
 }
 
 /* Text Selection */
 ::selection {
-  background: #bfdbfe;
-  color: #1e3a8a;
+  background: #ade8f4;
+  color: #03045e;
 }
 
 /* Animations */
@@ -159,7 +159,7 @@ button {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #023e8a 0%, #00b4d8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

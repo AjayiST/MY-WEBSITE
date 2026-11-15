@@ -182,20 +182,20 @@ const Projects: React.FC = () => {
 
   const getChainBadgeStyle = (chain: string) => {
     if (chain.includes('Base')) {
-      return 'bg-sky-100/90 text-sky-800 border border-sky-200 shadow-2xs'
+      return 'bg-[#caf0f8] text-[#0077b6] border border-[#90e0ef] shadow-2xs'
     }
     if (chain.includes('Solana')) {
-      return 'bg-indigo-100/90 text-indigo-800 border border-indigo-200 shadow-2xs'
+      return 'bg-[#e0e7ff] text-[#4338ca] border border-[#c7d2fe] shadow-2xs'
     }
-    return 'bg-blue-100/90 text-blue-800 border border-blue-200 shadow-2xs'
+    return 'bg-[#ade8f4] text-[#023e8a] border border-[#48cae4] shadow-2xs'
   }
 
   const renderMilestoneCard = (item: RoadmapItem) => (
-    <div className="milestone-card glass-surface glass-surface-hover rounded-2xl shadow-[0_8px_30px_rgba(147,197,253,0.14)] transition-all duration-300 text-left flex flex-col justify-between overflow-hidden group border border-white/95">
+    <div className="milestone-card glass-surface glass-surface-hover rounded-2xl shadow-[0_8px_30px_rgba(0,119,182,0.14)] transition-all duration-300 text-left flex flex-col justify-between overflow-hidden group border border-white/95">
       {/* Proof Photo Header with Click-to-Enlarge */}
       <div 
         onClick={() => setSelectedImage(item.image)}
-        className="relative rounded-xl overflow-hidden border border-blue-100/90 bg-white/70 group/img cursor-pointer hover:border-sky-400 transition-all flex-shrink-0 shadow-2xs"
+        className="relative rounded-xl overflow-hidden border border-[#ade8f4]/90 bg-white/70 group/img cursor-pointer hover:border-[#00b4d8] transition-all flex-shrink-0 shadow-2xs"
       >
         <img
           src={item.image}
@@ -203,12 +203,12 @@ const Projects: React.FC = () => {
           className="milestone-card-img w-full object-cover object-top group-hover/img:scale-105 transition-transform duration-300"
           loading="lazy"
         />
-        <div className="absolute inset-x-0 bottom-0 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-t from-slate-950/85 via-slate-950/50 to-transparent flex items-center justify-between text-[10px] sm:text-xs text-white font-medium backdrop-blur-xs">
+        <div className="absolute inset-x-0 bottom-0 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-t from-[#03045e]/90 via-[#03045e]/50 to-transparent flex items-center justify-between text-[10px] sm:text-xs text-white font-medium backdrop-blur-xs">
           <span className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-sky-400 shadow-[0_0_6px_rgba(56,189,248,0.8)]"></span>
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#00b4d8] shadow-[0_0_6px_rgba(0,180,216,0.8)]"></span>
             Role Proof
           </span>
-          <span className="text-slate-300 group-hover/img:text-white transition-colors">
+          <span className="text-[#caf0f8] group-hover/img:text-white transition-colors">
             Enlarge 🔍
           </span>
         </div>
@@ -228,30 +228,30 @@ const Projects: React.FC = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="milestone-card-badge font-semibold text-sky-600 hover:text-sky-800 underline flex items-center gap-1 cursor-pointer transition-colors !px-0"
+                className="milestone-card-badge font-semibold text-[#0077b6] hover:text-[#023e8a] underline flex items-center gap-1 cursor-pointer transition-colors !px-0"
               >
                 Telegram ↗
               </a>
             )}
           </div>
 
-          <h3 className="milestone-card-title font-bold text-slate-900 group-hover:text-blue-700 transition-colors truncate">
+          <h3 className="milestone-card-title font-bold text-[#03045e] group-hover:text-[#0077b6] transition-colors truncate">
             {item.project}
           </h3>
-          <p className="milestone-card-role font-bold uppercase tracking-wider text-sky-600 truncate">
+          <p className="milestone-card-role font-bold uppercase tracking-wider text-[#0077b6] truncate">
             {item.role}
           </p>
 
-          <p className="milestone-card-desc text-slate-600 line-clamp-2 lg:line-clamp-3 mb-1.5">
+          <p className="milestone-card-desc text-[#023e8a]/80 line-clamp-2 lg:line-clamp-3 mb-1.5">
             {item.description}
           </p>
         </div>
 
         {/* Highlights */}
-        <div className="milestone-card-highlights space-y-1 bg-blue-50/70 rounded-xl border border-blue-100/80 backdrop-blur-sm shadow-2xs flex-shrink-0">
+        <div className="milestone-card-highlights space-y-1 bg-[#caf0f8]/60 rounded-xl border border-[#ade8f4] backdrop-blur-sm shadow-2xs flex-shrink-0">
           {item.highlights.slice(0, 2).map((highlight, idx) => (
-            <div key={idx} className="milestone-card-highlight-item flex items-start gap-1.5 text-slate-700">
-              <span className="text-sky-600 font-bold">•</span>
+            <div key={idx} className="milestone-card-highlight-item flex items-start gap-1.5 text-[#023e8a]">
+              <span className="text-[#0096c7] font-bold">•</span>
               <span className="line-clamp-1">{highlight}</span>
             </div>
           ))}
@@ -259,11 +259,11 @@ const Projects: React.FC = () => {
       </div>
 
       {/* Tags footer */}
-      <div className="milestone-card-tags flex flex-nowrap overflow-hidden border-t border-blue-100/80 flex-shrink-0">
+      <div className="milestone-card-tags flex flex-nowrap overflow-hidden border-t border-[#ade8f4]/80 flex-shrink-0">
         {item.tags.slice(0, 3).map((tag, i) => (
           <span
             key={i}
-            className="milestone-card-tag bg-white/90 text-slate-600 font-medium rounded-md border border-blue-100 shadow-3xs hover:border-sky-300 transition-colors whitespace-nowrap"
+            className="milestone-card-tag bg-white/90 text-[#023e8a] font-medium rounded-md border border-[#ade8f4] shadow-3xs hover:border-[#00b4d8] transition-colors whitespace-nowrap"
           >
             {tag}
           </span>
@@ -275,61 +275,61 @@ const Projects: React.FC = () => {
   const renderToolCard = (tool: ToolItem) => (
     <div
       key={tool.id}
-      className="glass-surface glass-surface-hover rounded-2xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(147,197,253,0.14)] transition-all duration-300 flex flex-col justify-between group border border-white/95"
+      className="glass-surface glass-surface-hover rounded-2xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(0,119,182,0.14)] transition-all duration-300 flex flex-col justify-between group border border-white/95"
     >
       <div className="space-y-4">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <span className="text-[11px] font-semibold px-2.5 py-1 rounded-md glass-pill text-sky-900 border border-sky-300/70">
+          <span className="text-[11px] font-semibold px-2.5 py-1 rounded-md glass-pill text-[#023e8a] border border-[#48cae4]/70">
             {tool.badge}
           </span>
           <span className="text-2xl">{tool.icon}</span>
         </div>
 
         <div>
-          <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+          <h3 className="text-lg sm:text-xl font-bold text-[#03045e] group-hover:text-[#0077b6] transition-colors">
             {tool.title}
           </h3>
-          <p className="text-xs text-slate-500 font-medium mt-1 leading-relaxed">
+          <p className="text-xs text-[#023e8a]/75 font-medium mt-1 leading-relaxed">
             {tool.tagline}
           </p>
         </div>
 
         {/* Problem */}
-        <div className="bg-white/85 rounded-xl p-3 border border-blue-100 text-xs shadow-2xs">
+        <div className="bg-white/85 rounded-xl p-3 border border-[#ade8f4] text-xs shadow-2xs">
           <p className="font-bold text-amber-700 mb-1 flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
             Problem It Solves
           </p>
-          <p className="text-slate-600 leading-relaxed">{tool.problem}</p>
+          <p className="text-[#023e8a]/85 leading-relaxed">{tool.problem}</p>
         </div>
 
         {/* Functionality */}
-        <div className="bg-white/85 rounded-xl p-3 border border-blue-100 text-xs shadow-2xs">
-          <p className="font-bold text-sky-700 mb-1 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+        <div className="bg-white/85 rounded-xl p-3 border border-[#ade8f4] text-xs shadow-2xs">
+          <p className="font-bold text-[#0077b6] mb-1 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0096c7]"></span>
             Key Functionality
           </p>
-          <p className="text-slate-600 leading-relaxed">{tool.functionality}</p>
+          <p className="text-[#023e8a]/85 leading-relaxed">{tool.functionality}</p>
         </div>
 
         {/* Implementation */}
-        <div className="bg-white/85 rounded-xl p-3 border border-blue-100 text-xs shadow-2xs">
-          <p className="font-bold text-blue-700 mb-1 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <div className="bg-white/85 rounded-xl p-3 border border-[#ade8f4] text-xs shadow-2xs">
+          <p className="font-bold text-[#023e8a] mb-1 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0077b6]"></span>
             What I Implemented
           </p>
-          <p className="text-slate-600 leading-relaxed">{tool.implementation}</p>
+          <p className="text-[#023e8a]/85 leading-relaxed">{tool.implementation}</p>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="mt-5 pt-4 border-t border-blue-100 space-y-4">
+      <div className="mt-5 pt-4 border-t border-[#ade8f4] space-y-4">
         <div className="flex flex-wrap gap-1.5">
           {tool.tags.map((tag, i) => (
             <span
               key={i}
-              className="px-2 py-0.5 bg-white/90 text-slate-600 text-[10px] font-medium rounded-md border border-blue-100 shadow-3xs"
+              className="px-2 py-0.5 bg-white/90 text-[#023e8a] text-[10px] font-medium rounded-md border border-[#ade8f4] shadow-3xs"
             >
               {tag}
             </span>
@@ -341,7 +341,7 @@ const Projects: React.FC = () => {
             href={tool.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-2.5 bg-slate-900 hover:bg-sky-600 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
+            className="w-full py-2.5 bg-[#03045e] hover:bg-[#0077b6] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
@@ -354,65 +354,65 @@ const Projects: React.FC = () => {
   )
 
   return (
-    <section id="projects" className="py-24 px-4 bg-gradient-to-b from-[#edf4f9] via-[#e5f0f8] to-[#edf4f9] border-b border-blue-100 relative overflow-hidden bg-glass-grid">
-      {/* Ambient Powder Blue Glow Orbs */}
-      <div className="absolute top-1/4 -left-32 w-80 h-80 bg-[#cde4f7]/70 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-[#dcebf8]/70 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="projects" className="py-24 px-4 bg-gradient-to-b from-[#caf0f8] via-[#def2f7] to-[#caf0f8] border-b border-[#ade8f4] relative overflow-hidden bg-glass-grid">
+      {/* Ambient Ocean Blue Serenity Glow Orbs */}
+      <div className="absolute top-1/4 -left-32 w-80 h-80 bg-[#90e0ef]/60 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-[#ade8f4]/70 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-block px-4 py-1.5 glass-pill text-sky-900 border border-sky-300 text-xs font-semibold rounded-full mb-3 shadow-[0_4px_12px_rgba(147,197,253,0.2)]">
+          <div className="inline-block px-4 py-1.5 glass-pill text-[#023e8a] border border-[#48cae4] text-xs font-semibold rounded-full mb-3 shadow-[0_4px_12px_rgba(0,180,216,0.2)]">
             Web3 Track Record & Engineering
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#03045e] mb-4">
             Web3 Experience & Technical Portfolio
           </h2>
-          <p className="text-slate-600 text-base md:text-lg">
+          <p className="text-[#0077b6] text-base md:text-lg">
             A showcase of hands-on Web3 community leadership, chat safety systems, and production bots & tools built across EVM and Solana.
           </p>
         </div>
 
         {/* Track Record Stats Banner with Glowing Accents */}
-        <div className="max-w-4xl mx-auto mb-14 p-6 glass-surface rounded-2xl shadow-[0_8px_30px_rgba(147,197,253,0.18)] grid grid-cols-2 sm:grid-cols-4 gap-6 text-center items-start border border-white/95 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto mb-14 p-6 glass-surface rounded-2xl shadow-[0_8px_30px_rgba(0,119,182,0.14)] grid grid-cols-2 sm:grid-cols-4 gap-6 text-center items-start border border-white/95 relative overflow-hidden">
           <div className="flex flex-col items-center">
-            <p className="min-h-[2.25rem] flex items-center justify-center text-2xl md:text-3xl font-black text-slate-900 leading-tight">
-              <span className="w-2 h-2 rounded-full bg-sky-400 mr-2 shadow-[0_0_6px_rgba(56,189,248,0.8)]"></span>
+            <p className="min-h-[2.25rem] flex items-center justify-center text-2xl md:text-3xl font-black text-[#03045e] leading-tight">
+              <span className="w-2 h-2 rounded-full bg-[#00b4d8] mr-2 shadow-[0_0_6px_rgba(0,180,216,0.8)]"></span>
               5+
             </p>
-            <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1.5">Verified Roles</p>
+            <p className="text-xs text-[#0077b6] font-semibold uppercase tracking-wider mt-1.5">Verified Roles</p>
           </div>
           <div className="flex flex-col items-center">
-            <p className="min-h-[2.25rem] flex items-center justify-center text-2xl md:text-3xl font-black text-slate-900 leading-tight">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 mr-2 shadow-[0_0_6px_rgba(6,182,212,0.8)] animate-pulse"></span>
+            <p className="min-h-[2.25rem] flex items-center justify-center text-2xl md:text-3xl font-black text-[#03045e] leading-tight">
+              <span className="w-2 h-2 rounded-full bg-[#48cae4] mr-2 shadow-[0_0_6px_rgba(72,202,228,0.8)] animate-pulse"></span>
               Active
             </p>
-            <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1.5">Community Moderation</p>
+            <p className="text-xs text-[#0077b6] font-semibold uppercase tracking-wider mt-1.5">Community Moderation</p>
           </div>
           <div className="flex flex-col items-center">
-            <p className="min-h-[2.25rem] flex items-center justify-center text-2xl md:text-3xl font-black text-slate-900 leading-tight">
-              <span className="w-2 h-2 rounded-full bg-blue-500 mr-2 shadow-[0_0_6px_rgba(59,130,246,0.8)]"></span>
+            <p className="min-h-[2.25rem] flex items-center justify-center text-2xl md:text-3xl font-black text-[#03045e] leading-tight">
+              <span className="w-2 h-2 rounded-full bg-[#0077b6] mr-2 shadow-[0_0_6px_rgba(0,119,182,0.8)]"></span>
               4+
             </p>
-            <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1.5">Technical Tools Built</p>
+            <p className="text-xs text-[#0077b6] font-semibold uppercase tracking-wider mt-1.5">Technical Tools Built</p>
           </div>
           <div className="flex flex-col items-center">
-            <p className="min-h-[2.25rem] flex items-center justify-center text-xl sm:text-xl md:text-[24px] font-black text-slate-900 leading-tight whitespace-nowrap">
-              <span className="w-2 h-2 rounded-full bg-indigo-500 mr-2 shadow-[0_0_6px_rgba(99,102,241,0.8)]"></span>
+            <p className="min-h-[2.25rem] flex items-center justify-center text-xl sm:text-xl md:text-[24px] font-black text-[#03045e] leading-tight whitespace-nowrap">
+              <span className="w-2 h-2 rounded-full bg-[#023e8a] mr-2 shadow-[0_0_6px_rgba(2,62,138,0.8)]"></span>
               Multi-Platform
             </p>
-            <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1.5">Discord & Telegram</p>
+            <p className="text-xs text-[#0077b6] font-semibold uppercase tracking-wider mt-1.5">Discord & Telegram</p>
           </div>
         </div>
 
         {/* Two-Tab Toggle: Experience vs Technical Portfolio */}
         <div className="flex justify-center mb-16">
-          <div className="bg-white/80 backdrop-blur-md p-1.5 rounded-xl border border-blue-200/80 inline-flex gap-2 shadow-2xs">
+          <div className="bg-white/80 backdrop-blur-md p-1.5 rounded-xl border border-[#ade8f4] inline-flex gap-2 shadow-2xs">
             <button
               onClick={() => setActiveTab('roadmap')}
               className={`px-7 py-3 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 cursor-pointer ${
                 activeTab === 'roadmap'
-                  ? 'bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold shadow-[0_4px_16px_rgba(96,165,250,0.35)]'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-blue-50/80'
+                  ? 'bg-gradient-to-r from-[#0077b6] via-[#0096c7] to-[#00b4d8] text-white font-bold shadow-[0_4px_16px_rgba(0,150,199,0.35)]'
+                  : 'text-[#023e8a] hover:text-[#03045e] hover:bg-[#ade8f4]/50'
               }`}
             >
               <span className="text-base">💼</span>
@@ -422,8 +422,8 @@ const Projects: React.FC = () => {
               onClick={() => setActiveTab('tools')}
               className={`px-7 py-3 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 cursor-pointer ${
                 activeTab === 'tools'
-                  ? 'bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold shadow-[0_4px_16px_rgba(96,165,250,0.35)]'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-blue-50/80'
+                  ? 'bg-gradient-to-r from-[#0077b6] via-[#0096c7] to-[#00b4d8] text-white font-bold shadow-[0_4px_16px_rgba(0,150,199,0.35)]'
+                  : 'text-[#023e8a] hover:text-[#03045e] hover:bg-[#ade8f4]/50'
               }`}
             >
               <span className="text-base">🛠️</span>
@@ -436,10 +436,10 @@ const Projects: React.FC = () => {
         {activeTab === 'roadmap' && (
           <div className="relative w-full max-w-6xl mx-auto py-6 animate__animated animate__fadeIn">
             {/* Center Spine Line */}
-            <div className="hidden min-[480px]:block absolute left-1/2 top-6 bottom-6 w-0.5 bg-gradient-to-b from-blue-200 via-sky-400 to-blue-200 -translate-x-1/2"></div>
+            <div className="hidden min-[480px]:block absolute left-1/2 top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#ade8f4] via-[#0096c7] to-[#ade8f4] -translate-x-1/2"></div>
 
             {/* Spine Line for Ultra-Narrow Screens (<480px) */}
-            <div className="min-[480px]:hidden absolute left-4 top-6 bottom-6 w-0.5 bg-gradient-to-b from-blue-200 via-sky-400 to-blue-200"></div>
+            <div className="min-[480px]:hidden absolute left-4 top-6 bottom-6 w-0.5 bg-gradient-to-b from-[#ade8f4] via-[#0096c7] to-[#ade8f4]"></div>
 
             <div className="space-y-8 min-[480px]:space-y-12 md:space-y-14">
               {roadmap.map((item, index) => {
@@ -448,13 +448,13 @@ const Projects: React.FC = () => {
                 return (
                   <div key={item.id} className="relative">
                     {/* Center Node Indicator between Left & Right boxes */}
-                    <div className="hidden min-[480px]:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#edf4f9] border-2 border-sky-400 items-center justify-center shadow-[0_0_10px_rgba(56,189,248,0.5)] z-10 hover:scale-110 transition-transform">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-sky-400"></div>
+                    <div className="hidden min-[480px]:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#caf0f8] border-2 border-[#00b4d8] items-center justify-center shadow-[0_0_10px_rgba(0,180,216,0.5)] z-10 hover:scale-110 transition-transform">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#00b4d8]"></div>
                     </div>
 
                     {/* Ultra-Narrow Node Indicator (<480px) */}
-                    <div className="min-[480px]:hidden absolute left-4 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-[#edf4f9] border-2 border-sky-400 flex items-center justify-center shadow-[0_0_10px_rgba(56,189,248,0.5)] z-10">
-                      <div className="w-1.5 h-1.5 rounded-full bg-sky-400"></div>
+                    <div className="min-[480px]:hidden absolute left-4 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-[#caf0f8] border-2 border-[#00b4d8] flex items-center justify-center shadow-[0_0_10px_rgba(0,180,216,0.5)] z-10">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#00b4d8]"></div>
                     </div>
 
                     {/* Alternating Row Grid */}
@@ -490,14 +490,14 @@ const Projects: React.FC = () => {
             {/* GitHub Header Banner */}
             <div className="flex items-center justify-between p-5 glass-surface rounded-2xl shadow-xs flex-wrap gap-3 border border-white/95">
               <div>
-                <h3 className="text-base font-bold text-slate-900">Technical Portfolio & Open-Source Repositories</h3>
-                <p className="text-xs text-slate-500">Production bots, on-chain tools, and software implementations built across Rust, TypeScript, Python, and JavaScript.</p>
+                <h3 className="text-base font-bold text-[#03045e]">Technical Portfolio & Open-Source Repositories</h3>
+                <p className="text-xs text-[#0077b6]">Production bots, on-chain tools, and software implementations built across Rust, TypeScript, Python, and JavaScript.</p>
               </div>
               <a
                 href="https://github.com/AjayiST"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white text-xs font-bold rounded-xl transition-all shadow-[0_4px_16px_rgba(96,165,250,0.35)] cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#0077b6] via-[#0096c7] to-[#00b4d8] hover:from-[#023e8a] hover:via-[#0077b6] hover:to-[#0096c7] text-white text-xs font-bold rounded-xl transition-all shadow-[0_4px_16px_rgba(0,150,199,0.35)] cursor-pointer"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
@@ -507,23 +507,23 @@ const Projects: React.FC = () => {
             </div>
 
             {/* FEATURED TECHNICAL BUILD SPOTLIGHT */}
-            <div className="relative glass-surface rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_16px_45px_rgba(147,197,253,0.22)] border border-sky-200/90 overflow-hidden group">
-              {/* Subtle ambient powder blue glow */}
-              <div className="absolute -top-24 -right-24 w-80 h-80 bg-gradient-to-br from-sky-200/60 via-blue-100/40 to-transparent rounded-full blur-3xl opacity-75 pointer-events-none"></div>
+            <div className="relative glass-surface rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_16px_45px_rgba(0,119,182,0.18)] border border-[#48cae4]/60 overflow-hidden group">
+              {/* Subtle ambient ocean blue serenity glow */}
+              <div className="absolute -top-24 -right-24 w-80 h-80 bg-gradient-to-br from-[#90e0ef]/60 via-[#ade8f4]/40 to-transparent rounded-full blur-3xl opacity-75 pointer-events-none"></div>
 
               <div className="relative z-10">
                 {/* Top Badge & Action */}
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-sky-400 to-blue-500 text-white shadow-xs">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-[#0077b6] to-[#0096c7] text-white shadow-xs">
                       <span>⭐</span>
                       Featured Technical Build
                     </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold glass-pill text-sky-900 border border-sky-300">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold glass-pill text-[#023e8a] border border-[#48cae4]">
                       {featuredTool.badge}
                     </span>
-                    <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-sky-100 text-sky-800 border border-sky-200">
-                      <span className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse"></span>
+                    <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-[#caf0f8] text-[#0077b6] border border-[#90e0ef]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00b4d8] animate-pulse"></span>
                       Sub-Second Latency
                     </span>
                   </div>
@@ -533,7 +533,7 @@ const Projects: React.FC = () => {
                       href={featuredTool.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white text-xs font-bold rounded-xl transition-all shadow-[0_4px_16px_rgba(96,165,250,0.35)] cursor-pointer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#0077b6] via-[#0096c7] to-[#00b4d8] hover:from-[#023e8a] hover:via-[#0077b6] hover:to-[#0096c7] text-white text-xs font-bold rounded-xl transition-all shadow-[0_4px_16px_rgba(0,150,199,0.35)] cursor-pointer"
                     >
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
@@ -547,55 +547,55 @@ const Projects: React.FC = () => {
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-3xl sm:text-4xl">{featuredTool.icon}</span>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#03045e] tracking-tight">
                       {featuredTool.title}
                     </h3>
                   </div>
-                  <p className="text-slate-700 text-sm sm:text-base leading-relaxed max-w-3xl font-medium">
+                  <p className="text-[#002d5a] text-sm sm:text-base leading-relaxed max-w-3xl font-medium">
                     {featuredTool.tagline}
                   </p>
                 </div>
 
                 {/* 3 Detail Columns */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <div className="bg-white/85 rounded-2xl p-4 border border-blue-100 shadow-xs">
+                  <div className="bg-white/85 rounded-2xl p-4 border border-[#ade8f4] shadow-xs">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2 flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                       The Problem It Solves
                     </h4>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-[#002d5a]/85 text-xs sm:text-sm leading-relaxed">
                       {featuredTool.problem}
                     </p>
                   </div>
 
-                  <div className="bg-white/85 rounded-2xl p-4 border border-blue-100 shadow-xs">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-sky-700 mb-2 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-sky-500"></span>
+                  <div className="bg-white/85 rounded-2xl p-4 border border-[#ade8f4] shadow-xs">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#0077b6] mb-2 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#0096c7]"></span>
                       Key Functionality
                     </h4>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-[#002d5a]/85 text-xs sm:text-sm leading-relaxed">
                       {featuredTool.functionality}
                     </p>
                   </div>
 
-                  <div className="bg-white/85 rounded-2xl p-4 border border-blue-100 shadow-xs">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                  <div className="bg-white/85 rounded-2xl p-4 border border-[#ade8f4] shadow-xs">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#023e8a] mb-2 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#0077b6]"></span>
                       Architecture & Implementation
                     </h4>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-[#002d5a]/85 text-xs sm:text-sm leading-relaxed">
                       {featuredTool.implementation}
                     </p>
                   </div>
                 </div>
 
                 {/* Tech Stack Tags */}
-                <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-blue-100">
-                  <span className="text-xs font-bold text-slate-700 mr-1 uppercase tracking-wider">Tech Stack:</span>
+                <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-[#ade8f4]">
+                  <span className="text-xs font-bold text-[#023e8a] mr-1 uppercase tracking-wider">Tech Stack:</span>
                   {featuredTool.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 bg-white/90 text-slate-700 text-xs font-semibold rounded-lg border border-blue-100 shadow-3xs"
+                      className="px-2.5 py-1 bg-white/90 text-[#023e8a] text-xs font-semibold rounded-lg border border-[#ade8f4] shadow-3xs"
                     >
                       {tag}
                     </span>
@@ -607,10 +607,10 @@ const Projects: React.FC = () => {
             {/* CATEGORY 1: WEB3 AUTOMATION & BLOCKCHAIN TOOLS */}
             <div className="space-y-6 pt-4">
               <div className="flex items-center gap-3">
-                <span className="px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-sky-100 text-sky-800 border border-sky-200">
+                <span className="px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-[#caf0f8] text-[#0077b6] border border-[#90e0ef]">
                   Web3 Automation & Blockchain Tools ({web3Tools.length})
                 </span>
-                <div className="flex-1 h-px bg-gradient-to-r from-sky-200 to-transparent"></div>
+                <div className="flex-1 h-px bg-gradient-to-r from-[#90e0ef] to-transparent"></div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -621,10 +621,10 @@ const Projects: React.FC = () => {
             {/* CATEGORY 2: OTHER DEVELOPMENT PROJECTS */}
             <div className="space-y-6 pt-4">
               <div className="flex items-center gap-3">
-                <span className="px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider glass-pill text-slate-800 border border-blue-200">
+                <span className="px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider glass-pill text-[#023e8a] border border-[#ade8f4]">
                   Other Development Projects ({generalTools.length})
                 </span>
-                <div className="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent"></div>
+                <div className="flex-1 h-px bg-gradient-to-r from-[#ade8f4] to-transparent"></div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -639,12 +639,12 @@ const Projects: React.FC = () => {
       {selectedImage && (
         <div 
           onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer animate__animated animate__fadeIn"
+          className="fixed inset-0 z-50 bg-[#03045e]/80 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer animate__animated animate__fadeIn"
         >
-          <div className="relative max-w-3xl max-h-[90vh] bg-white/95 border border-blue-100 rounded-2xl overflow-hidden p-2 shadow-2xl">
+          <div className="relative max-w-3xl max-h-[90vh] bg-white/95 border border-[#ade8f4] rounded-2xl overflow-hidden p-2 shadow-2xl">
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm shadow-md transition-colors z-10 cursor-pointer"
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#03045e] text-white flex items-center justify-center font-bold text-sm shadow-md transition-colors z-10 cursor-pointer hover:bg-[#0077b6]"
             >
               ✕
             </button>
