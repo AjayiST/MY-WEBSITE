@@ -69,14 +69,14 @@ const Contact: React.FC = () => {
           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
         </svg>
       ),
-      hoverColor: 'group-hover:text-white',
+      hoverColor: 'group-hover:text-slate-950',
     },
     {
       name: 'X',
       handle: '@still_belmont',
       url: 'https://x.com/still_belmont',
       icon: <span className="font-bold text-lg leading-none">𝕏</span>,
-      hoverColor: 'group-hover:text-white',
+      hoverColor: 'group-hover:text-slate-950',
     },
     {
       name: 'Discord',
@@ -99,28 +99,28 @@ const Contact: React.FC = () => {
   ]
 
   return (
-    <section id="contact" className="py-24 px-4 bg-gradient-to-b from-[#070b14] via-[#091326] to-[#070b14] bg-glass-grid relative overflow-hidden border-t border-sky-500/15">
-      {/* Ambient Blue Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-sky-500/10 via-blue-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+    <section id="contact" className="py-24 px-4 bg-gradient-to-b from-[#edf4f9] via-[#e5f0f8] to-[#edf4f9] bg-glass-grid relative overflow-hidden border-t border-blue-100">
+      {/* Ambient Powder Blue Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-sky-200/60 via-blue-100/40 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-2xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-1.5 glass-pill text-sky-400 border border-sky-500/30 text-xs font-semibold rounded-full mb-3 shadow-2xs">
+          <div className="inline-block px-4 py-1.5 glass-pill text-sky-900 border border-sky-300 text-xs font-semibold rounded-full mb-3 shadow-[0_4px_12px_rgba(147,197,253,0.2)]">
             Start a Conversation
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
             Get In Touch
           </h2>
-          <p className="text-slate-300 text-base md:text-lg">
+          <p className="text-slate-600 text-base md:text-lg">
             Looking for a dedicated Community Manager or custom vibecoded tools and bots? Let's talk!
           </p>
         </div>
 
-        <div className="glass-surface border border-white/10 rounded-2xl p-8 sm:p-10 shadow-[0_12px_40px_rgba(2,6,23,0.7)] backdrop-blur-xl">
+        <div className="glass-surface border border-white/95 rounded-2xl p-8 sm:p-10 shadow-[0_12px_40px_rgba(147,197,253,0.18)] backdrop-blur-xl">
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+              <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                 Your Name
               </label>
               <input
@@ -130,14 +130,14 @@ const Contact: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-sky-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-sky-500/25 transition-all text-white placeholder-slate-500 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/90 border border-blue-200/90 rounded-xl focus:border-sky-400 focus:bg-white focus:ring-2 focus:ring-sky-400/20 transition-all text-slate-900 placeholder-slate-400 text-sm shadow-2xs"
                 placeholder="e.g. Alex"
               />
             </div>
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                 Email Address
               </label>
               <input
@@ -147,14 +147,14 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-sky-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-sky-500/25 transition-all text-white placeholder-slate-500 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/90 border border-blue-200/90 rounded-xl focus:border-sky-400 focus:bg-white focus:ring-2 focus:ring-sky-400/20 transition-all text-slate-900 placeholder-slate-400 text-sm shadow-2xs"
                 placeholder="alex@project.xyz"
               />
             </div>
 
             {/* Subject Field */}
             <div>
-              <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+              <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                 Subject
               </label>
               <input
@@ -164,14 +164,14 @@ const Contact: React.FC = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-sky-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-sky-500/25 transition-all text-white placeholder-slate-500 text-sm shadow-xs"
+                className="w-full px-4 py-3 bg-white/90 border border-blue-200/90 rounded-xl focus:border-sky-400 focus:bg-white focus:ring-2 focus:ring-sky-400/20 transition-all text-slate-900 placeholder-slate-400 text-sm shadow-2xs"
                 placeholder="Community Manager Role / Custom Bot Build"
               />
             </div>
 
             {/* Message Field */}
             <div>
-              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                 Message
               </label>
               <textarea
@@ -181,21 +181,21 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-white/[0.05] border border-white/10 rounded-xl focus:border-sky-400 focus:bg-white/[0.08] focus:ring-2 focus:ring-sky-500/25 transition-all text-white placeholder-slate-500 text-sm resize-none shadow-xs"
+                className="w-full px-4 py-3 bg-white/90 border border-blue-200/90 rounded-xl focus:border-sky-400 focus:bg-white focus:ring-2 focus:ring-sky-400/20 transition-all text-slate-900 placeholder-slate-400 text-sm resize-none shadow-2xs"
                 placeholder="Tell me about your project, community goals, or bot requirements..."
               />
             </div>
 
             {/* Success Message */}
             {success && (
-              <div className="p-4 bg-sky-950/80 border border-sky-500/40 rounded-xl text-sky-300 text-sm font-medium shadow-xs">
+              <div className="p-4 bg-sky-50 border border-sky-200 rounded-xl text-sky-800 text-sm font-medium shadow-xs">
                 ✓ Message sent successfully! I'll reply promptly.
               </div>
             )}
 
             {/* Error Message */}
             {error && (
-              <div className="p-4 bg-rose-950/80 border border-rose-500/40 rounded-xl text-rose-300 text-sm font-medium shadow-xs">
+              <div className="p-4 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-sm font-medium shadow-xs">
                 ✗ {error}
               </div>
             )}
@@ -204,7 +204,7 @@ const Contact: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold rounded-xl shadow-[0_0_20px_rgba(14,165,233,0.4)] hover:shadow-[0_0_30px_rgba(56,189,248,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed text-sm tracking-wide"
+              className="w-full py-3.5 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold rounded-xl shadow-[0_4px_20px_rgba(96,165,250,0.35)] hover:shadow-[0_6px_25px_rgba(96,165,250,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed text-sm tracking-wide"
             >
               {loading ? 'Sending Message...' : 'Send Message'}
             </button>
@@ -219,13 +219,13 @@ const Contact: React.FC = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative h-12 min-w-[48px] px-3.5 rounded-xl glass-surface hover:bg-sky-500/10 text-slate-300 hover:text-white border border-white/10 hover:border-sky-500/40 flex items-center justify-center hover:-translate-y-0.5 shadow-xs hover:shadow-md transition-all duration-300 ease-out cursor-pointer overflow-hidden whitespace-nowrap"
+              className="group relative h-12 min-w-[48px] px-3.5 rounded-xl glass-surface hover:bg-white text-slate-700 hover:text-slate-950 border border-white/95 flex items-center justify-center hover:-translate-y-0.5 shadow-2xs hover:shadow-md transition-all duration-300 ease-out cursor-pointer overflow-hidden whitespace-nowrap"
               title={`${social.name}: ${social.handle}`}
             >
               <span className={`flex-shrink-0 flex items-center justify-center transition-colors ${social.hoverColor}`}>
                 {social.icon}
               </span>
-              <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-[240px] group-hover:opacity-100 group-hover:ml-2.5 transition-all duration-300 ease-out font-bold text-xs sm:text-sm text-slate-100">
+              <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-[240px] group-hover:opacity-100 group-hover:ml-2.5 transition-all duration-300 ease-out font-bold text-xs sm:text-sm text-slate-900">
                 {social.handle}
               </span>
             </a>

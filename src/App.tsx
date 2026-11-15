@@ -18,7 +18,7 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-transparent text-slate-100 selection:bg-sky-500 selection:text-white">
+    <div className="min-h-screen bg-transparent text-slate-800 selection:bg-blue-200 selection:text-blue-900">
       <Navbar scrollPosition={scrollPosition} />
       <main>
         <div id="home">
